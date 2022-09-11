@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-03-Wiring" />
+        <module name="spring-04-Autowiring" />
+        <module name="spring-02-Core-IoC-Stereotype-Annotation" />
+        <module name="spring-00-Coupling" />
+        <module name="spring-01-Core-IoC-Bean-Annotation" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-training-practice" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
