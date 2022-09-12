@@ -9,7 +9,6 @@ import lombok.Setter;
 public class DellCase extends Case {
 
     public DellCase(String model, String manufacturer, String powerSupply) {
-
         super(model, manufacturer, powerSupply);
     }
 
