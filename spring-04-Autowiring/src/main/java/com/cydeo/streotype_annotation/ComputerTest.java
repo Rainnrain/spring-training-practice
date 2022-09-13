@@ -1,5 +1,6 @@
 package com.cydeo.streotype_annotation;
 
+import com.cydeo.streotype_annotation.casefactory.Case;
 import com.cydeo.streotype_annotation.config.PcConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -11,5 +12,8 @@ public class ComputerTest {
 
         PC myPc = container.getBean(PC.class);
 
+
+        myPc.powerUp();
+        System.out.println(myPc.getTheCase().getDimensions().getDepth());
     }
 }

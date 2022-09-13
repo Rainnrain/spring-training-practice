@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-03-Wiring" />
+        <module name="spring-04-Autowiring" />
+        <module name="spring-02-Core-IoC-Stereotype-Annotation" />
+        <module name="spring-00-Coupling" />
+        <module name="spring-01-Core-IoC-Bean-Annotation" />
+        <module name="spring-05-Core-Abstraction" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-01-Core-IoC-Bean-Annotation" options="" />
+      <module name="spring-02-Core-IoC-Stereotype-Annotation" options="" />
+      <module name="spring-03-Wiring" options="" />
+      <module name="spring-04-Autowiring" options="" />
+    </option>
+  </component>
+</project>

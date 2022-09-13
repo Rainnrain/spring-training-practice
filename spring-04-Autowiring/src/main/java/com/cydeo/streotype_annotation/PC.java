@@ -11,12 +11,13 @@ import org.springframework.stereotype.Component;
 @Getter
 @Component
 public class PC {
-@Autowired // feild injection, not preferred
+//@Autowired // feild injection, not preferred
     private Case theCase;
     private Monitor monitor;
     private Motherboard motherboard;
 
-@Autowired // Can do constructor injection only required if more than one constructor
+//@Autowired // Can do constructor injection only required if more than one constructor
+
     public PC(Case theCase, Monitor monitor, Motherboard motherboard) {
         this.theCase = theCase;
        this.monitor = monitor;
