@@ -2,6 +2,7 @@ package com.cydeo.streotype_annotation;
 
 import com.cydeo.streotype_annotation.casefactory.Case;
 import com.cydeo.streotype_annotation.config.PcConfig;
+import com.cydeo.streotype_annotation.monitorfactory.Monitor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,7 +12,7 @@ public class ComputerTest {
         ApplicationContext container =new AnnotationConfigApplicationContext(PcConfig.class);
 
         PC myPc = container.getBean(PC.class);
-
+        Monitor monitor = container.getBean(Monitor.class);
 
         myPc.powerUp();
         System.out.println(myPc.getTheCase().getDimensions().getDepth());
