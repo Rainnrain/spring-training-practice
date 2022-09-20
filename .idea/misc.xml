@@ -12,8 +12,16 @@
         <option value="$PROJECT_DIR$/spring-05-Core-Abstraction/pom.xml" />
         <option value="$PROJECT_DIR$/spring-05-Core-Abstraction/spring-06-Core-BeanScope/pom.xml" />
         <option value="$PROJECT_DIR$/spring-06-Core-BeanScope/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-07-SpringBoot-Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/sring-08-MVC-Controller/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-09-MVC-Model/pom.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK" />
+  <component name="SwUserDefinedSpecifications">
+    <option name="specTypeByUrl">
+      <map />
+    </option>
+  </component>
 </project>

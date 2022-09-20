@@ -2,7 +2,14 @@
 <module version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/cydeo/bean_annotation/casefactory/config/ObjectConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/cydeo/bean_annotation/casefactory/config/ComputerConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/cydeo/bean_annotation/config/ComputerConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/cydeo/bean_annotation/config/RandomConfig.java</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
 </module>
