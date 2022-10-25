@@ -1,0 +1,27 @@
+package com.cydeo.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Data
+@NoArgsConstructor
+
+public class Cart {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long id;
+
+    @ManyToMany
+    @JoinTable(name= "cart_item_rel",
+    joinColumns = @JoinColumn(name="c_id"),
+    inverseJoinColumns = @JoinColumn(name="i_id"))
+    private List<Item> itemList;
+
+
+}
