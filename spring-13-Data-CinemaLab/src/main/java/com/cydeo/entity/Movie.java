@@ -29,7 +29,7 @@ public class Movie extends BaseEntity{
     private BigDecimal price;
 
     @ManyToMany
-    @JoinTable(name="Movie_genre_rel",
+    @JoinTable(name="movie_genre_rel",
     joinColumns = @JoinColumn(name="movie_id"),
     inverseJoinColumns = @JoinColumn(name="genre_id"))
     private List <Genre> genreList;
