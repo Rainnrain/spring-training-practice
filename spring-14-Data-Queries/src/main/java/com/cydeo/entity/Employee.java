@@ -17,13 +17,13 @@ private String lastName;
 private String email;
  @Column(columnDefinition = "DATE")
 private LocalDate hireDate;
-@OneToOne
+@ManyToOne
 @JoinColumn(name="department")
 private Department department;
 @Enumerated(EnumType.STRING)
 private Gender gender;
 private Integer salary;
-@OneToOne
+@ManyToOne
 private Region region;
 
 

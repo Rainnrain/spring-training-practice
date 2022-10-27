@@ -1,0 +1,21 @@
+package com.cydeo.Repository;
+
+import com.cydeo.entity.Region;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface RegionRepository extends JpaRepository<Region, Integer> {
+// Display all regions in Canada
+
+    List<Region> findByCountry(String country);
+    List<Region> getByCountry(String country);
+
+    // Display all regions with country names that include "United
+
+    List<Region> findByCountryContaining(String word);
+
+    //Display all regions with country names that include "United" in order of their regions
+
+    List<Region> findByCountryContainingOrderByRegion(String word);
+}
