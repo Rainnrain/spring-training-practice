@@ -49,7 +49,7 @@ List<Cinema> findByNameOrSponsorName(String name);
     List<Cinema> sortedByName();
 
     //Write a native query to distinct all cinemas by sponsored name
-    @Query(nativeQuery = true, value = "select distinct sponsored_name from cinema ") //  Not sure if this is what the question is asking
+   @Query(nativeQuery = true, value = "select distinct sponsored_name from cinema") //  Not sure if this is what the question is asking
 
-    List<String> distinctSponsores();
+   List<String> distinctSponsores();
 }

@@ -11,11 +11,14 @@ public class QueriesDemo implements CommandLineRunner {
     private final AccountRepository accountRepository;
     private final CinemaRepository cinemaRepository;
 
+    private final GenreRepository genreRepository;
 
-    public QueriesDemo(AccountRepository accountRepository, CinemaRepository cinemaRepository) {
+
+    public QueriesDemo(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository) {
         this.accountRepository = accountRepository;
 
         this.cinemaRepository = cinemaRepository;
+        this.genreRepository = genreRepository;
     }
 
     @Override
@@ -42,5 +45,9 @@ public class QueriesDemo implements CommandLineRunner {
         System.out.println("OrderedByName: "+cinemaRepository.sortedByName());
         System.out.println("distinct Sponsor "+cinemaRepository.distinctSponsores());
 
+        System.out.println("-----------_----Genre--------------");
+        System.out.println("Genre: "+genreRepository.findAll());
+        System.out.println("genre Native: "+genreRepository.genreNames());
+        System.out.println("Genre: "+genreRepository.genreNames2("Drama"));
     }
 }
