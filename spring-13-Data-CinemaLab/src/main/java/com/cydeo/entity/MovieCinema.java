@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
-@Data
+
 public class MovieCinema extends BaseEntity{
     @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dateTime;
@@ -17,4 +17,35 @@ public class MovieCinema extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Cinema cinema;
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
+
+    public Cinema getCinema() {
+        return cinema;
+    }
+
+    public void setCinema(Cinema cinema) {
+        this.cinema = cinema;
+    }
+
+    @Override
+    public String toString() {
+        return "MovieCinema{" +
+                "dateTime=" + dateTime +
+                '}';
+    }
 }
