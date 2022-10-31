@@ -22,6 +22,7 @@ public interface MovieCinemaRepository extends JpaRepository<MovieCinema, Long> 
 
 
     MovieCinema findMovieCinemaByid(Long aLong);
+    //Optional<MovieCinema> findById(Long id);
 
 
     //Write a derived query to count all movie cinemas with a specific cinema id
@@ -37,13 +38,15 @@ public interface MovieCinemaRepository extends JpaRepository<MovieCinema, Long> 
 
     //Write a derived query to find the top 3 expensive movies
 
-  //  List<MovieCinema>  ();
-    //Not working
+   List<MovieCinema> findFirst3ByOrderByMoviePriceDesc ();
+
     //Write a derived query to list all movie cinemas that contain a specific movie name
 
     List<MovieCinema> findMovieCinemaByMovie_Name(String movie);
+    List<MovieCinema> findAllByMovieNameContaining(String movie);
     //Write a derived query to list all movie cinemas in a specific location name
 
+    List<MovieCinema> findAllByCinemaLocationName();
 
     // ------------------- JPQL QUERIES ------------------- //
 
@@ -55,10 +58,11 @@ public interface MovieCinemaRepository extends JpaRepository<MovieCinema, Long> 
     // ------------------- Native QUERIES ------------------- //
 
     //Write a native query to count all movie cinemas by cinema id
-@Query(value = "SELECT count whe",nativeQuery = true)
-    int countOfCinemaMovies();
+@Query(value = "SELECT count(*) from movie_cinema where cinema_id =?1",nativeQuery = true)
+    int countOfCinemaMovies(int id);
 
     //Write a native query that returns all movie cinemas by location name
-@Query(value="SELECT * from movieCinema where movieCinema.cinema.location =?1",nativeQuery = true)
-List<MovieCinema> findByName(@Param("Pattern") String location);
+@Query(value="SELECT * from movie_cinema mc JOIN cinema c ON c.id =mc.cinema_id" +
+        " JOIN location l ON l.id= c.location_id where l.name=?1",nativeQuery = true)
+List<MovieCinema> findByName(@Param("name") String name);
 }
