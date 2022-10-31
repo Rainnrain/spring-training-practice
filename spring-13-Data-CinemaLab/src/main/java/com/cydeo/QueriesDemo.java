@@ -30,7 +30,7 @@ public class QueriesDemo implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("Creating my tests");
-        System.out.println("Account test: "+accountRepository.findAccountByCountryEqualsOrState("United States", "New York"));
+        System.out.println("Account test: "+accountRepository.findAccountByCountryOrState("United States", "New York"));
         System.out.println("Account test: "+accountRepository.findAccountByAgeIsLessThanEqual(36));
         System.out.println("Account test: "+accountRepository.findAccountByRoleEquals(UserRole.USER));
         System.out.println("Account test: "+accountRepository.findAccountByAgeBetween(24, 56));
@@ -61,8 +61,9 @@ public class QueriesDemo implements CommandLineRunner {
         System.out.println("Movie: "+movieCinemaRepository.countByCinema_id(1L));
         System.out.println("Movie: "+movieCinemaRepository.countMovieCinemaByMovie_id(2L));
         System.out.println("Movie: "+movieCinemaRepository.findMovieCinemaByDateTimeAfter(LocalDateTime.of(2020,12,06,12,00)));
-       System.out.println("Movie: "+movieCinemaRepository.findMovieCinemasOrderByMovie_Price());
+      // System.out.println("Movie: "+movieCinemaRepository.findMovieCinemasOrderByMovie_Price());
         System.out.println("Movie by name: "+movieCinemaRepository.findMovieCinemaByMovie_Name("Tenet"));
+
 
     }
 }
