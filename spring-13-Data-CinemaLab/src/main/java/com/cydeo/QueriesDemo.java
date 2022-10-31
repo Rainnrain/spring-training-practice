@@ -12,22 +12,20 @@ public class QueriesDemo implements CommandLineRunner {
 
     private final AccountRepository accountRepository;
     private final CinemaRepository cinemaRepository;
-
-    private final GenreRepository genreRepository;
-
+    private final MovieRepository movieRepository;
     private final MovieCinemaRepository movieCinemaRepository;
-
     private final TicketRepository ticketRepository;
+    private final GenreRepository genreRepository;
+    private final UserRepository userRepository;
 
-
-    public QueriesDemo(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository, MovieCinemaRepository movieCinemaRepository, TicketRepository ticketRepository) {
+    public QueriesDemo(AccountRepository accountRepository, CinemaRepository cinemaRepository, MovieRepository movieRepository, MovieCinemaRepository movieCinemaRepository, TicketRepository ticketRepository, GenreRepository genreRepository, UserRepository userRepository) {
         this.accountRepository = accountRepository;
-
         this.cinemaRepository = cinemaRepository;
-        this.genreRepository = genreRepository;
+        this.movieRepository = movieRepository;
         this.movieCinemaRepository = movieCinemaRepository;
-
         this.ticketRepository = ticketRepository;
+        this.genreRepository = genreRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -68,10 +66,16 @@ public class QueriesDemo implements CommandLineRunner {
         System.out.println("Movie by name: "+movieCinemaRepository.findMovieCinemaByMovie_Name("Tenet"));
 
         System.out.println(accountRepository.AgeLowerThanThis(40));
-    System.out.println(accountRepository.listofAccountsWithContained("United States"));
+        System.out.println(accountRepository.listofAccountsWithContained("United States"));
         System.out.println();
-      //  System.out.println(accountRepository.listOfAccountsWithAnAgeAbove(24));
+        //  System.out.println(accountRepository.listOfAccountsWithAnAgeAbove(24));
 
         System.out.println(ticketRepository.countAllByUserAccountId(2L));
+
+
+
+
+
     }
+
 }
