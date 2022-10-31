@@ -64,6 +64,9 @@ public class QueriesDemo implements CommandLineRunner {
       // System.out.println("Movie: "+movieCinemaRepository.findMovieCinemasOrderByMovie_Price());
         System.out.println("Movie by name: "+movieCinemaRepository.findMovieCinemaByMovie_Name("Tenet"));
 
+        System.out.println(accountRepository.AgeLowerThanThis(40));
+    System.out.println(accountRepository.listofAccountsWithContained("United States"));
 
+      //  System.out.println(accountRepository.listOfAccountsWithAnAgeAbove(24));
     }
 }

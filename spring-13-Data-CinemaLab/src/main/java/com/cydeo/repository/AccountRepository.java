@@ -40,6 +40,8 @@ List<Account> findAccountByAddressStartingWith(int a);
   List<Account> getAccountByAgeIsNotNullOrderByAge();
   List<Account> findByOrderByAge();
 
+
+
     // ------------------- JPQL QUERIES ------------------- //
 
     //Write a JPQL query that returns all accounts
@@ -63,11 +65,15 @@ List<Account> AccountsSortedByAge();
     //Write a native query to read all accounts that a specific value can be containable in the name,
     // address, country, state city
 
-@Query(value = "SELECT * from Account where Account Like  ?1", nativeQuery = true)
+    @Query(value = "select * from account_details where name ilike concat('%',?1,'%')" +
+            "or country ilike concat('%',?1,'%') " +
+            "or address ilike concat('%',?1,'%')" +
+            "or state ilike concat('%',?1,'%')" +
+            "or city ilike concat('%',?1,'%')", nativeQuery = true)
   List<Account> listofAccountsWithContained(String str);
 
     //Write a native query to read all accounts with an age higher than a specific value
 
-@Query(value="SELECT * from Account where account_age >?1",nativeQuery = true)
+@Query(value="SELECT * from account_details where account_age >?1",nativeQuery = true)
     List<Account> listOfAccountsWithAnAgeAbove(int age);
 }
