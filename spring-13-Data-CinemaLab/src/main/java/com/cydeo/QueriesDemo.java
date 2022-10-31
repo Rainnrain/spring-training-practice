@@ -5,7 +5,6 @@ import com.cydeo.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Component
@@ -18,13 +17,17 @@ public class QueriesDemo implements CommandLineRunner {
 
     private final MovieCinemaRepository movieCinemaRepository;
 
+    private final TicketRepository ticketRepository;
 
-    public QueriesDemo(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository, MovieCinemaRepository movieCinemaRepository) {
+
+    public QueriesDemo(AccountRepository accountRepository, CinemaRepository cinemaRepository, GenreRepository genreRepository, MovieCinemaRepository movieCinemaRepository, TicketRepository ticketRepository) {
         this.accountRepository = accountRepository;
 
         this.cinemaRepository = cinemaRepository;
         this.genreRepository = genreRepository;
         this.movieCinemaRepository = movieCinemaRepository;
+
+        this.ticketRepository = ticketRepository;
     }
 
     @Override
@@ -66,7 +69,9 @@ public class QueriesDemo implements CommandLineRunner {
 
         System.out.println(accountRepository.AgeLowerThanThis(40));
     System.out.println(accountRepository.listofAccountsWithContained("United States"));
-
+        System.out.println();
       //  System.out.println(accountRepository.listOfAccountsWithAnAgeAbove(24));
+
+        System.out.println(ticketRepository.countAllByUserAccountId(2L));
     }
 }

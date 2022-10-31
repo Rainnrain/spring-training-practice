@@ -46,7 +46,7 @@ public interface MovieCinemaRepository extends JpaRepository<MovieCinema, Long> 
     List<MovieCinema> findAllByMovieNameContaining(String movie);
     //Write a derived query to list all movie cinemas in a specific location name
 
-    List<MovieCinema> findAllByCinemaLocationName();
+    List<MovieCinema> findAllByCinemaLocationName(String name);
 
     // ------------------- JPQL QUERIES ------------------- //
 
