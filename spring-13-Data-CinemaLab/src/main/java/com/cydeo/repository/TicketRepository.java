@@ -72,7 +72,7 @@ List<Ticket> findAllByDateTimeBetween(LocalDateTime a, LocalDateTime b);
             "JOIN account_details ad ON ad.id=ua.account_details_id" +
             "JOIN movie_cinema mc on mc.id=t.movie_cinema_id" +
             "JOIN movie m ON mc.movie_id=m.id" +
-            "Where ua.userbane ILIKE concat('%',?1,'%')" +
+            "Where ua.username ILIKE concat('%',?1,'%')" +
             "Or ad.name ILIKE concat ('%',?1,'%')" +
             "or m.name ILIKE concat ('%',?1,'%')", nativeQuery = true)
     List<Ticket> ticktesWithUserAccount(@Param ("user") String userName);
