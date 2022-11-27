@@ -1,7 +1,13 @@
 package com.cydeo.dto;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class ResponseWrapper {
 
     private boolean success;
@@ -17,7 +23,7 @@ public class ResponseWrapper {
         this.success=true;
     }
 
-    public ResponseWrapper(String message){
+    public ResponseWrapper(String message){ // If you delete you wont be sending data back
         this.message=message;
         this.code= HttpStatus.OK.value();
         this.success=true;
