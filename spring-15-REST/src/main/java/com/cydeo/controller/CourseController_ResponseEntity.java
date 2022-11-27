@@ -4,10 +4,7 @@ import com.cydeo.dto.CourseDTO;
 import com.cydeo.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,7 +23,7 @@ public class CourseController_ResponseEntity {
     public ResponseEntity <List<CourseDTO>> getAllCourses(){
 
         return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
+                .status(HttpStatus.ACCEPTED) // returns 202
                 .header("Version", "Cydeo.V2" )
                 .header("Operation", "Get List")
                 .body(courseService.getCourses());
@@ -34,13 +31,23 @@ public class CourseController_ResponseEntity {
     }
     @GetMapping("{id}")
     public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") long courseId){
-        return  ResponseEntity.ok(courseService.getCourseById(courseId));
+        return  ResponseEntity.ok(courseService.getCourseById(courseId)); // Ok returns 200
     }
 
     @GetMapping("/category/{name}")
     public ResponseEntity <List<CourseDTO>> getCoursesByCategory(@PathVariable ("name") String name){
 
         return ResponseEntity.ok(courseService.getCoursesByCategory(name));
+    }
+
+    @PostMapping
+
+    public ResponseEntity<CourseDTO> createCourse( @RequestBody CourseDTO course){
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .header("Operation", "Create")
+                .body(courseService.createCourse(course));
     }
 
 }
