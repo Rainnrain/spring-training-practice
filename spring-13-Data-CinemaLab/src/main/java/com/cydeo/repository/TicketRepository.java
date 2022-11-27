@@ -68,6 +68,29 @@ List<Ticket> findAllByDateTimeBetween(LocalDateTime a, LocalDateTime b);
 
     //Write a native query to list all tickets where a specific value should be
     // containable in the username or account name or movie name
+//
+//
+//    @Query(value="SELECT * from tickets t  join user_account ua ON t.user_account_id = ua.id" +
+//            "JOIN account_details ad ON ad.id=ua.account_details_id" +
+//            "JOIN movie_cinema mc ON mc.id=t.movie_cinema_id" +
+//            "JOIN Movie m ON mc.movie_id=m.id" +
+//            "Where ua.username ILIKE concat ('%', ?1,'%') ", nativeQuery = true)
+//    List<Ticket> specificTickets(@Param("key") String username);
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @Query(value="SELECT * from ticket t  JOIN user_account ua ON t.user_account_id=ua.id" +
             "JOIN account_details ad ON ad.id=ua.account_details_id" +
             "JOIN movie_cinema mc on mc.id=t.movie_cinema_id" +
