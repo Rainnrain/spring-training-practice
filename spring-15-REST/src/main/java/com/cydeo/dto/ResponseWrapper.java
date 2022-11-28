@@ -23,7 +23,7 @@ public class ResponseWrapper {
         this.success=true;
     }
 
-    public ResponseWrapper(String message){ // If you delete you wont be sending data back
+    public ResponseWrapper(String message){ // If you delete you won't be sending data back
         this.message=message;
         this.code= HttpStatus.OK.value();
         this.success=true;
