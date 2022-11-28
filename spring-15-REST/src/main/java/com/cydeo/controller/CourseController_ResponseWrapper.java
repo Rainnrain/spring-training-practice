@@ -36,11 +36,10 @@ public class CourseController_ResponseWrapper {
     @PostMapping
     public ResponseEntity<ResponseWrapper> createCourse(@RequestBody CourseDTO courseDTO){
 
-
-
         return ResponseEntity.status(HttpStatus.CREATED)
                 .header("Version", "Cydeo.V3")
-
                 .body(new ResponseWrapper("Course "+courseDTO.getName()+ "has been created",courseService.createCourse(courseDTO)));
     }
+
+
 }
