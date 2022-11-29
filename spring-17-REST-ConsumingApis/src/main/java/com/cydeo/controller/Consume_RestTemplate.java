@@ -1,7 +1,8 @@
 package com.cydeo.controller;
 
-import com.dto.User;
-import org.springframework.http.*;
+
+ import com.cydeo.dto.User;
+ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,7 +26,7 @@ public class Consume_RestTemplate {
     @GetMapping
     public ResponseEntity <User[]> readAllUsers(){
 
-      return  restTemplate.getForEntity(URI, User[].class);
+      return  restTemplate.getForEntity(URI, User[].class); // returns entity therefor more customizable
     }
 
     @GetMapping("{id}")

@@ -1,6 +1,7 @@
 package com.cydeo.client;
 
-import com.dto.Employee;
+import com.cydeo.dto.Response;
+
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -9,5 +10,5 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface EmployeeClient {
 
     @GetMapping("/data/v1/user?limit=10")
-    Employee getEmployee(@RequestHeader("app-id") String id);
+    Response getEmployee(@RequestHeader("app-id") String id);
 }

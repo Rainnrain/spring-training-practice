@@ -2,7 +2,6 @@
 package com.cydeo.dto;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -14,63 +13,76 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "data",
-    "total",
-    "page",
-    "limit"
+    "id",
+    "title",
+    "firstName",
+    "lastName",
+    "picture"
 })
 @Generated("jsonschema2pojo")
 public class Employee {
 
-    @JsonProperty("data")
-    private List<Datum> data = null;
-    @JsonProperty("total")
-    private Integer total;
-    @JsonProperty("page")
-    private Integer page;
-    @JsonProperty("limit")
-    private Integer limit;
+    @JsonProperty("id")
+    private String id;
+    @JsonProperty("title")
+    private String title;
+    @JsonProperty("firstName")
+    private String firstName;
+    @JsonProperty("lastName")
+    private String lastName;
+    @JsonProperty("picture")
+    private String picture;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("data")
-    public List<Datum> getData() {
-        return data;
+    @JsonProperty("id")
+    public String getId() {
+        return id;
     }
 
-    @JsonProperty("data")
-    public void setData(List<Datum> data) {
-        this.data = data;
+    @JsonProperty("id")
+    public void setId(String id) {
+        this.id = id;
     }
 
-    @JsonProperty("total")
-    public Integer getTotal() {
-        return total;
+    @JsonProperty("title")
+    public String getTitle() {
+        return title;
     }
 
-    @JsonProperty("total")
-    public void setTotal(Integer total) {
-        this.total = total;
+    @JsonProperty("title")
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    @JsonProperty("page")
-    public Integer getPage() {
-        return page;
+    @JsonProperty("firstName")
+    public String getFirstName() {
+        return firstName;
     }
 
-    @JsonProperty("page")
-    public void setPage(Integer page) {
-        this.page = page;
+    @JsonProperty("firstName")
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    @JsonProperty("limit")
-    public Integer getLimit() {
-        return limit;
+    @JsonProperty("lastName")
+    public String getLastName() {
+        return lastName;
     }
 
-    @JsonProperty("limit")
-    public void setLimit(Integer limit) {
-        this.limit = limit;
+    @JsonProperty("lastName")
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @JsonProperty("picture")
+    public String getPicture() {
+        return picture;
+    }
+
+    @JsonProperty("picture")
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
     @JsonAnyGetter

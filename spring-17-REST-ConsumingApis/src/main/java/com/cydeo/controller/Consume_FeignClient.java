@@ -2,7 +2,8 @@ package com.cydeo.controller;
 
 import com.cydeo.client.EmployeeClient;
 import com.cydeo.client.UserClient;
-import com.dto.ResponseWrapper;
+import com.cydeo.dto.ResponseWrapper;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,8 @@ public class Consume_FeignClient {
         this.userClient = userClient;
         this.employeeClient = employeeClient;
     }
-    @GetMapping("/api/v1/users")
+
+    @GetMapping("/api/v1/users") // consumes api through interface
     public ResponseEntity<ResponseWrapper> getUsers(){
     return ResponseEntity.ok( new ResponseWrapper("UserList Retreived", userClient.getUsers() ));
     }
