@@ -20,13 +20,13 @@ public class SchoolController {
 
     private final TeacherService teacherService;
     private final StudentService studentService;
-    private final ParentService paretntService;
+    private final ParentService parentService;
     private final AddressService addressService;
 
     public SchoolController(TeacherService teacherService, StudentService studentService, ParentService paretntService, AddressService addressService) {
         this.teacherService = teacherService;
         this.studentService = studentService;
-        this.paretntService = paretntService;
+        this.parentService = paretntService;
         this.addressService = addressService;
     }
 
@@ -46,7 +46,7 @@ public class SchoolController {
 
     @GetMapping("/parents")
     public ResponseEntity<ResponseWrapper> readAllParents(){
-        ResponseWrapper responseWrapper= new ResponseWrapper(true,"Parents retreived sucessfully",HttpStatus.OK.value(), paretntService.findAll());
+        ResponseWrapper responseWrapper= new ResponseWrapper(true,"Parents retreived sucessfully",HttpStatus.OK.value(), parentService.findAll());
         return ResponseEntity.status(HttpStatus.OK).body(responseWrapper);
 }
 
