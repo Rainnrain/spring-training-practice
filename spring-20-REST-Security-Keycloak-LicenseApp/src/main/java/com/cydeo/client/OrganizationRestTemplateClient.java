@@ -17,7 +17,7 @@ public class OrganizationRestTemplateClient {
 
     public Organization getOrganization(String organizationId) {
 
-        ResponseEntity<Organization> restExchange = restTemplate.exchange("http://localhost:8082/v1/organization/{organizationId}", HttpMethod.GET, null, Organization.class, organizationId);
+        ResponseEntity<Organization> restExchange = restTemplate.exchange("http://localhost:8086/v1/organization/{organizationId}", HttpMethod.GET, null, Organization.class, organizationId);
 
         return restExchange.getBody();
     }
