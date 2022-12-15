@@ -1,5 +1,7 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+
+import java.nio.file.AccessDeniedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,10 +14,37 @@ class CalculatorTest {
         assertEquals(5, actual, "Test failed.");
     }
 
+    @BeforeAll
+    static void setUpAll() {
+        System.out.println("BeforeAll is executed.");
+    }
+
+    @AfterAll
+    static void tearDownAll() {
+        System.out.println("AfterAll is executed.");
+    }
+    @Test
+    void add2(){
+        System.out.println("add 2");
+       // assertThrows(IllegalArgumentException.class, ()->Calculator.add(3,2));
+     //  assertThrows(AccessDeniedException.class,()->Calculator.add(4,3));
+        assertThrows(IllegalArgumentException.class, ()->Calculator.add(4,3));
+    }
+
     @Test
     void testCase1() {
 //        System.out.println("Test Case 1");
         fail("Not implemented yet.");
+    }
+
+    @BeforeEach
+    void setUpEach() {
+        System.out.println("BeforeEach is executed.");
+    }
+
+    @AfterEach
+    void tearDownEach() {
+        System.out.println("AfterEach is executed.");
     }
 
     @Test
@@ -51,6 +80,13 @@ class CalculatorTest {
     @Test
     void testCase5() {
         System.out.println("Test Case 5");
+
+        Calculator c1=new Calculator();
+        Calculator c2=c1;
+        Calculator c3=new Calculator();
+
+        assertSame(c1, c2);
+        assertNotSame(c1,c3);
     }
 
 }
