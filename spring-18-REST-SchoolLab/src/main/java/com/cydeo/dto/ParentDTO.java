@@ -19,7 +19,6 @@ public class ParentDTO {
 
     @JsonIgnore
     private Long id;
-
     private String firstName;
     private String lastName;
     private String profession;
