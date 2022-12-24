@@ -28,7 +28,7 @@ class CalculatorTest {
         System.out.println("add 2");
        // assertThrows(IllegalArgumentException.class, ()->Calculator.add(3,2));
      //  assertThrows(AccessDeniedException.class,()->Calculator.add(4,3));
-        assertThrows(IllegalArgumentException.class, ()->Calculator.add(4,3));
+        assertThrows(IllegalArgumentException.class,()->Calculator.add(4,3));
     }
 
     @Test

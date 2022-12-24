@@ -35,10 +35,9 @@ class TaskServiceImplTest {
     @ValueSource(longs = {1L, 2L, 3L})
     void findById_Test(long id) {
 
-
-        Task task= new Task();
-       when(taskRepository.findById(id)).thenReturn(Optional.of(task)); // stub
-       when(taskMapper.convertToDto(task)).thenReturn(new TaskDTO()); // stub
+        Task task = new Task();
+        when(taskRepository.findById(id)).thenReturn(Optional.of(task)); // stub
+        when(taskMapper.convertToDto(task)).thenReturn(new TaskDTO()); // stub
 
         taskService.findById(id); // This is the real test- we are verifying the results from here
 
@@ -48,10 +47,9 @@ class TaskServiceImplTest {
     }
 
     @Test
-    void findById_BDD_Test(){// This structure isn't as popular as above
+    void findById_BDD_Test() {// This structure isn't as popular as above
         //given
-
-        Task task= new Task();
+        Task task = new Task();
         given(taskRepository.findById(anyLong())).willReturn(Optional.of(task));
         given(taskMapper.convertToDto(task)).willReturn(new TaskDTO());
         //when
