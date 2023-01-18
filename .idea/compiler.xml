@@ -35,6 +35,7 @@
         <module name="spring-04-Autowiring" />
         <module name="spring-07-SpringBoot-Demo" />
         <module name="spring-24-UnitTesting-MockMVC" />
+        <module name="Spring-25-Docker" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -47,6 +48,7 @@
       <module name="Spring-15-REST" options="-parameters" />
       <module name="Spring-16-REST-Jackson" options="-parameters" />
       <module name="Spring-18-REST-OpenAPI3" options="-parameters" />
+      <module name="Spring-25-Docker" options="-parameters" />
       <module name="sping-13-Data-CinemaLab" options="-parameters" />
       <module name="spring-01-Core-IoC-Bean-Annotation" options="" />
       <module name="spring-02-Core-IoC-Stereotype-Annotation" options="" />
